@@ -1,0 +1,19 @@
+// Colors
+$white: #FFFFFF;
+$offwhite: darken($white,5%);
+
+$black: #000000;
+$offblack: lighten($black,25%);
+
+$grey: #CDCCC9;
+$lightgrey: lighten($grey,15%);
+$darkgrey: darken($grey,15%);
+
+$blue: #00BFC2;
+$lightblue: lighten($blue,5%);
+$darkblue: darken($blue,5%);
+
+// Fonts
+$primary-serif: 'Bressay', serif;
+$primary-sans: 'Acumin Pro', sans-serif;
+$secondary-sans: 'Futura PT', sans-serif;
