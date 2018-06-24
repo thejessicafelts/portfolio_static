@@ -177,9 +177,9 @@ gulp.task('scripts', ['lint'], function(){
         .pipe(connect.reload())
 })
 
-gulp.task('blog', function(){
-    return gulp.src('./app/blog/**')
-        .pipe(gulp.dest(paths.dist+'/blog'))
+gulp.task('thoughts', function(){
+    return gulp.src('./app/thoughts/**')
+        .pipe(gulp.dest(paths.dist+'/thoughts'))
         .pipe(connect.reload())
 })
 
@@ -259,7 +259,7 @@ var cors = function (req, res, next) {
 
 // rewrite requests to the corresponding HTML files
 var rewrite = modRewrite([
-    '^/blog/(.*)$ /blog/$1.html'
+    '^/thoughts/(.*)$ /thoughts/$1.html'
 ])
 
 gulp.task('connectDist', function () {
@@ -284,7 +284,7 @@ gulp.task('connectDist', function () {
 
 **********************************************/
 
-gulp.task('watch', ['sass','html','scripts','images','videos', 'blog','copy'], function (){
+gulp.task('watch', ['sass','html','scripts','images','videos', 'thoughts','copy'], function (){
     gulp.watch('app/assets/css/**', ['sass', 'images'])
     // gulp.watch('app/*.html', ['html'])
     gulp.watch('app/**/*.html', ['html'])
@@ -292,7 +292,7 @@ gulp.task('watch', ['sass','html','scripts','images','videos', 'blog','copy'], f
     gulp.watch('app/assets/js/**/*.js',['scripts'])
     gulp.watch('app/partials/**/*.hbs',['sass','html','scripts','images','videos'])
     gulp.watch('app/data/**', ['data'])
-    gulp.watch('app/blog/**', ['blog'])
+    gulp.watch('app/thoughts/**', ['thoughts'])
 })
 
 /*
@@ -307,7 +307,7 @@ gulp.task('watch', ['sass','html','scripts','images','videos', 'blog','copy'], f
 **************************************/
 
 gulp.task('build', function (callback) {
-    runSequence('clean',['sass', 'scripts', 'html', 'blog', 'images', 'videos'])
+    runSequence('clean',['sass', 'scripts', 'html', 'thoughts', 'images', 'videos'])
 })
 
 gulp.task('clean', function() {
